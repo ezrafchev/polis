@@ -2,6 +2,10 @@
 
 Site estático institucional da Poliway com estrutura robusta, seções completas e deploy automático no GitHub Pages.
 
+## Status da branch
+
+Conflitos de merge dos arquivos `README.md`, `index.html`, `script.js` e `styles.css` foram consolidados nesta versão, mantendo uma única implementação consistente entre conteúdo, estilo e scripts.
+
 ## Publicação no GitHub Pages
 
 1. Faça push para o branch padrão (`main`, `master` ou `work`).

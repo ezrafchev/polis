@@ -47,32 +47,37 @@ function renderProducts() {
     productGrid.innerHTML = '<article class="card"><h3>Nenhum produto encontrado</h3><p>Tente outro termo de busca.</p></article>';
   }
 }
-searchInput.addEventListener("input", renderProducts);
-categoryFilter.addEventListener("change", renderProducts);
-renderProducts();
+if (productGrid && searchInput && categoryFilter) {
+  searchInput.addEventListener("input", renderProducts);
+  categoryFilter.addEventListener("change", renderProducts);
+  renderProducts();
+}
 
 const roiForm = document.querySelector("#roiForm");
 const roiResult = document.querySelector("#roiResult");
-roiForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const paradas = Number(document.querySelector("#paradas").value) || 0;
-  const custoHora = Number(document.querySelector("#custoHora").value) || 0;
-  const horas = Number(document.querySelector("#horas").value) || 0;
-  const ganho = paradas * custoHora * horas * 12 * 0.38;
+if (roiForm && roiResult) {
+  roiForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const paradas = Number(document.querySelector("#paradas").value) || 0;
+    const custoHora = Number(document.querySelector("#custoHora").value) || 0;
+    const horas = Number(document.querySelector("#horas").value) || 0;
+    const ganho = paradas * custoHora * horas * 12 * 0.38;
 
-  roiResult.textContent = `Potencial de recuperação anual: ${ganho.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    maximumFractionDigits: 0,
-  })}`;
-});
+    roiResult.textContent = `Potencial de recuperação anual: ${ganho.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+      maximumFractionDigits: 0,
+    })}`;
+  });
+}
 
 const checkForm = document.querySelector("#checkForm");
 const checkOutput = document.querySelector("#checkOutput");
-checkForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const equipamento = document.querySelector("#equipamento").value;
-  const criticidade = document.querySelector("#criticidade").value;
+if (checkForm && checkOutput) {
+  checkForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const equipamento = document.querySelector("#equipamento").value;
+    const criticidade = document.querySelector("#criticidade").value;
 
   const tasks = [
     "Conferir alinhamento da correia e condição dos roletes.",
@@ -84,17 +89,20 @@ checkForm.addEventListener("submit", (event) => {
     tasks.push("Registrar plano de ação com responsável e prazo.");
   }
 
-  checkOutput.innerHTML = `<li><strong>Equipamento:</strong> ${equipamento}</li>${tasks.map((item) => `<li>${item}</li>`).join("")}`;
-});
+    checkOutput.innerHTML = `<li><strong>Equipamento:</strong> ${equipamento}</li>${tasks.map((item) => `<li>${item}</li>`).join("")}`;
+  });
+}
 
 const contactForm = document.querySelector("#contactForm");
 const contactFeedback = document.querySelector("#contactFeedback");
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  contactFeedback.textContent = "Mensagem enviada com sucesso. Nosso time retornará em até 1 dia útil.";
-  contactFeedback.style.color = "#6dffe1";
-  contactForm.reset();
-});
+if (contactForm && contactFeedback) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    contactFeedback.textContent = "Mensagem enviada com sucesso. Nosso time retornará em até 1 dia útil.";
+    contactFeedback.style.color = "#6dffe1";
+    contactForm.reset();
+  });
+}
 
 const revealSections = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver((entries) => {
@@ -109,14 +117,16 @@ revealSections.forEach((section) => revealObserver.observe(section));
 
 const menuBtn = document.querySelector("#menuBtn");
 const mainNav = document.querySelector("#mainNav");
-menuBtn.addEventListener("click", () => {
-  const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-  menuBtn.setAttribute("aria-expanded", String(!expanded));
-  mainNav.classList.toggle("open");
-});
-mainNav.querySelectorAll("a").forEach((a) => {
-  a.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
+if (menuBtn && mainNav) {
+  menuBtn.addEventListener("click", () => {
+    const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", String(!expanded));
+    mainNav.classList.toggle("open");
   });
-});
+  mainNav.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+}
