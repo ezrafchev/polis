@@ -1,0 +1,7 @@
+<svg width="220" height="46" viewBox="0 0 220 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="44" height="44" rx="10" fill="#0E1A33" stroke="#3C7BFF"/>
+  <path d="M12 30V16H26.4C30.2 16 33 18.6 33 22.2C33 25.8 30.2 28.4 26.4 28.4H17V30H12Z" fill="#EAF1FF"/>
+  <path d="M24.5 28.4L31 36H25.4L19.8 28.4H24.5Z" fill="#6FFFF1"/>
+  <text x="56" y="20" fill="#F4F7FF" font-family="Inter, Arial" font-size="18" font-weight="800">POLIWAY</text>
+  <text x="56" y="36" fill="#8EA0C8" font-family="Inter, Arial" font-size="11" font-weight="600">Soluções em correias transportadoras</text>
+</svg>
