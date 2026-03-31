@@ -1,0 +1,5 @@
+# Reduce repeated merge conflicts for long static files in this repository.
+README.md merge=union
+index.html merge=union
+script.js merge=union
+styles.css merge=union

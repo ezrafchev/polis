@@ -1,10 +1,6 @@
 # Poliway Website
 
-Site estático institucional da Poliway com estrutura robusta, seções completas e deploy automático no GitHub Pages.
-
-## Status da branch
-
-Conflitos de merge dos arquivos `README.md`, `index.html`, `script.js` e `styles.css` foram consolidados nesta versão, mantendo uma única implementação consistente entre conteúdo, estilo e scripts.
+Site estático institucional da Poliway com deploy automático no GitHub Pages.
 
 ## Publicação no GitHub Pages
 
@@ -17,5 +13,5 @@ Conflitos de merge dos arquivos `README.md`, `index.html`, `script.js` e `styles
 
 - `index.html`: estrutura principal do site.
 - `styles.css`: identidade visual e responsividade.
-- `script.js`: filtros de catálogo, calculadora ROI, checklist e interações.
+- `script.js`: filtros, calculadora ROI, checklist e interações.
 - `.github/workflows/deploy-pages.yml`: pipeline de publicação.
